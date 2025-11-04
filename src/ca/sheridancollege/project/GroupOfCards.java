@@ -1,12 +1,15 @@
 /**
  * SYST 17796 Project Base code.
  * Students can modify and extend to implement their game.
- * Add your name as an author and the date!
+ * 
  */
 package ca.sheridancollege.project;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Deque;
+import java.util.List;
 
 /**
  * A concrete class that represents any grouping of cards for a Game. HINT, you might want to subclass this more than
@@ -14,42 +17,26 @@ import java.util.Collections;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @author  Varinder Johal OCT 10 ,2025
  */
 public class GroupOfCards {
+    private final Deque<WarCard> cards = new ArrayDeque<>();
 
-    //The group of cards, stored in an ArrayList
-    private ArrayList<Card> cards;
-    private int size;//the size of the grouping
-
-    public GroupOfCards(int size) {
-        this.size = size;
+    public void addToBottom(List<WarCard> newCards) {
+        for (WarCard c : newCards) {
+            if (c != null) cards.addLast(c);
+        }
     }
 
-    /**
-     * A method that will get the group of cards as an ArrayList
-     *
-     * @return the group of cards.
-     */
-    public ArrayList<Card> getCards() {
-        return cards;
-    }
+    public WarCard drawTop() { return cards.pollFirst(); }
 
     public void shuffle() {
-        Collections.shuffle(cards);
+        List<WarCard> temp = new ArrayList<>(cards);
+        Collections.shuffle(temp);
+        cards.clear();
+        cards.addAll(temp);
     }
 
-    /**
-     * @return the size of the group of cards
-     */
-    public int getSize() {
-        return size;
-    }
-
-    /**
-     * @param size the max size for the group of cards
-     */
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-}//end class
+    public int size() { return cards.size(); }
+    public boolean isEmpty() { return cards.isEmpty(); }
+}

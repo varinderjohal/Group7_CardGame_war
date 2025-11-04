@@ -10,16 +10,22 @@ package ca.sheridancollege.project;
  * game. Students wishing to add to the code should remember to add themselves as a modifier.
  *
  * @author dancye
+ * @author Varinder Johal OCT 10, 2025
  */
 public abstract class Card {
-    //default modifier for child classes
+    private final String suit;
+    private final int rank;
 
-    /**
-     * Students should implement this method for their specific children classes
-     *
-     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
-     */
+    public Card(String suit, int rank) {
+        this.suit = suit;
+        this.rank = rank;
+    }
+
+    public String getSuit() { return suit; }
+    public int getRank() { return rank; }
+
     @Override
-    public abstract String toString();
-
+    public String toString() {
+        return rank + " of " + suit;
+    }
 }
