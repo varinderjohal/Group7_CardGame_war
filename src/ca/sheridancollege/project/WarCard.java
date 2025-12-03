@@ -23,4 +23,5 @@ public class WarCard extends Card implements Comparable<WarCard> {
     public String toString() {
         return getRank() + " of " + getSuit();
     }
+    
 }

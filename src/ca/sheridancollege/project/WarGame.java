@@ -114,6 +114,9 @@ public class WarGame extends Game {
         else if (scoreboard.getScore(p2) > scoreboard.getScore(p1))
             System.out.println(p2.getName() + " wins the game!");
         else
+            
             System.out.println("The game is a draw!");
     }
+    
+    
 }

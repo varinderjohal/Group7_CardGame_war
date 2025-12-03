@@ -31,4 +31,5 @@ public class WarPlayer extends Player {
     public int getDeckSize() {
         return deck.size();
     }
+    
 }

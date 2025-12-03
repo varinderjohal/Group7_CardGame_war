@@ -39,4 +39,5 @@ public class GroupOfCards {
 
     public int size() { return cards.size(); }
     public boolean isEmpty() { return cards.isEmpty(); }
+    
 }
