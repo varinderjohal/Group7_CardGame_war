@@ -27,17 +27,17 @@ public class Main {
         // Prepare scoreboard
         Scoreboard sb = new Scoreboard();
 
-        // ✅ FIX: use ArrayList<Player> to match Game.java
+        
         ArrayList<Player> players = new ArrayList<>();
         players.add(p1);
         players.add(p2);
 
-        // Start the game
+        // Starting the game
         WarGame game = new WarGame("War Card Game", players, sb);
         game.play();
     }
 
-    // Generates 52 War cards (13 ranks × 4 suits)
+    // Generates cards
     private static List<WarCard> generateDeck() {
         List<WarCard> deck = new ArrayList<>();
         for (Suit suit : Suit.values()) {
